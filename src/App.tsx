@@ -171,7 +171,7 @@ function HelpView() {
     <div>
       <h5>What is this?</h5>
       <p>
-        <a href={"https://www.blueprincegame.com/"}>Blue Prince</a> is an
+        <a href={"https://www.blueprincegame.com/"}>Blue Prince</a> is a
         rogue-like puzzle game by{" "}
         <a href={"http://www.dogubomb.com/"}>Dogubomb</a>. This page is a
         fan-made hint system (not affiliated with or endorsed by Dogubomb in any
