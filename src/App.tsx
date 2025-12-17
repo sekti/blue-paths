@@ -656,6 +656,7 @@ function App() {
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
+              minHeight: 0,
             }}
           >
             <div className={tabClasses("Quiz", "quiz")}>

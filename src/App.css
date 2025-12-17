@@ -253,6 +253,7 @@ span.chip.bingo.locked {
 
 .contentTab {
   max-width: 600px;
+  min-height: 0;
 }
 
 .hintdialog p {
