@@ -1,0 +1,8 @@
+iperender -svg -view 1 realms.ipe "Orinda Aries.svg"
+iperender -svg -view 2 realms.ipe "Fenn Aries.svg"
+iperender -svg -view 3 realms.ipe "Arch Aries.svg"
+iperender -svg -view 4 realms.ipe "Eraja.svg"
+iperender -svg -view 5 realms.ipe "Corarica.svg"
+iperender -svg -view 6 realms.ipe "Mora Jai.svg"
+iperender -svg -view 7 realms.ipe "Verra.svg"
+iperender -svg -view 8 realms.ipe "Nuance.svg"

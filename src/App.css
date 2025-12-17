@@ -1,0 +1,376 @@
+:root {
+  --myblue: #0d6efd; /* #007bff;*/
+  --myred: hsl(0, 50%, 50%);
+  --mygreen: hsl(127, 50%, 35%);
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* prevent outer scrolling */
+}
+
+.demo {
+  width: 70%;
+  margin-left: calc((100% - 70%) * 1 / 3);
+  margin-right: calc((100% - 70%) * 2 / 3);
+  pointer-events: none;
+}
+
+.memo {
+  background: #f0e8d9; /* off-white paper tone */
+  width: 80%;
+  padding: 16px 14px;
+  margin: 5px auto;
+
+  /* paper feel */
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+
+  /* font-family: "Patrick Hand", cursive;*/
+  font-family: "Special Elite", system-ui;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+@font-face {
+  font-family: "Nothing You Could Do";
+  src: url("/fonts/NothingYouCouldDo.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Special Elite";
+  src: url("/fonts/SpecialElite.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Coming Soon";
+  src: url("/fonts/ComingSoon.woff2") format("woff2");
+}
+
+.memo p {
+  margin-bottom: 0pt;
+}
+
+.memo.babbage {
+  /* slight imperfection */
+  font-family: "Coming Soon", system-ui;
+  transform: rotate(-1deg);
+  background: rgb(188, 190, 229);
+}
+
+.memo.darren {
+  /* slight imperfection */
+  transform: rotate(1deg);
+  background: rgb(190, 102, 102);
+  transform: rotate(1deg);
+}
+
+.memo.moore {
+  font-family: "Nothing You Could Do", system-ui;
+}
+
+.watermarked {
+  position: relative;
+}
+
+.watermark {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.tabs-lg {
+  font-weight: bold;
+}
+
+.nav-link:not(.active) span {
+  color: white;
+}
+.nav-link.active span {
+  font-weight: bold;
+}
+
+.nav-tabs > li {
+  transition: all 0.3s ease;
+}
+
+li.nav-item button {
+  width: 100%;
+}
+
+.emph {
+  font-style: italic;
+}
+
+.query-title {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+span.chip.bingo {
+  background-color: hsl(240, 100%, 85%);
+}
+span.chip.bingo.locked {
+  background-color: hsl(240, 100%, 95%);
+}
+
+.inline-icon {
+  height: 1lh;
+  /* CSS unit for line height (experimental but supported in Chrome/Firefox) */
+  /*width: auto;*/
+  vertical-align: middle;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.25rem; /* smaller space to the right */
+}
+
+.chip span {
+  margin-right: 0.25rem; /* space between text and button */
+}
+
+.chip .btn-close {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+
+.switch {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  --slider-width: 60px;
+  --slider-height: 25px;
+  --slider-slack: 5px;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  margin: 3px;
+}
+
+.switch :hover {
+  --slider-slack: 3px;
+}
+
+.switch input {
+  display: none;
+  /* hide actual checkbox */
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+  border-radius: var(--slider-height);
+  display: flex;
+  align-items: center;
+}
+
+/* knob element */
+
+.knob {
+  position: absolute;
+  height: calc(var(--slider-height) - 2 * var(--slider-slack));
+  width: calc(var(--slider-height) - 2 * var(--slider-slack));
+  left: var(--slider-slack);
+  bottom: var(--slider-slack);
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  line-height: calc(var(--slider-height) - 2 * var(--slider-slack));
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* right position */
+
+.switch.set-to-true .knob {
+  transform: translateX(calc(var(--slider-width) - var(--slider-height)));
+}
+
+/* middle position */
+
+.switch.set-to-undefined .knob {
+  transform: translateX(
+    calc(var(--slider-width) / 2 - var(--slider-height) / 2)
+  );
+}
+
+.switch.set-to-false .knob {
+  transform: translateX(0);
+}
+
+/* background colors for track */
+
+.switch.set-to-true .slider {
+  background: var(--myblue);
+}
+.switch.set-to-undefined .slider {
+  background: #aaaaaa;
+}
+.switch.set-to-false .slider {
+  background: var(--myred);
+}
+
+.switch.set-to-true.locked .slider {
+  background: hsl(240, 50%, 75%);
+}
+.switch.set-to-false.locked .slider {
+  background: hsl(0, 50%, 75%);
+}
+
+.quotedText {
+  font-family: "Georgia", serif;
+}
+
+.hint-dialog-title {
+  font-weight: bold;
+}
+
+.headerButtons button {
+  padding: 3pt;
+}
+.headerButtons button img {
+  width: 1.5em;
+  filter: invert();
+}
+
+.headerButtons button.logo img {
+  width: 9em;
+  filter: none;
+}
+
+.contentTab {
+  max-width: 600px;
+}
+
+.hintdialog p {
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+.quiz > div {
+  opacity: 0;
+  margin-bottom: 1em;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* OPEN STATE — hr-like line with label floating in the middle */
+.wide-btn {
+  --btn-color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 4px;
+  background: var(--btn-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  text-align: center;
+  position: relative;
+  border: none;
+}
+
+.wide-btn.solved {
+  --btn-color: var(--mygreen);
+}
+.wide-btn:hover {
+  background: color-mix(in srgb, var(--btn-color) 80%, black);
+}
+
+.wide-btn.open {
+  background: transparent;
+  border: none; /* no visible border */
+  color: #777;
+  padding: 0px 30px;
+}
+
+/* The horizontal line */
+.wide-btn::before {
+  max-width: 30%;
+  content: "";
+  flex: 1 1;
+  margin: 0 4px; /* spacing around the label */
+}
+.wide-btn::after {
+  content: "";
+  flex: 1 1;
+  margin: 0 4px; /* spacing around the label */
+}
+.wide-btn.open::before,
+.wide-btn.open::after {
+  border-bottom: 1px solid #ccc;
+}
+
+.wide-btn span {
+  display: inline-block;
+}
+
+li.bingo::marker {
+  color: var(--myblue);
+  content: "✓ ";
+}
+li.bingo {
+  opacity: 0;
+  animation: appear 0.2s ease-out forwards;
+}
+
+/* logic for todos appearing via scrolling */
+
+button.todo > span {
+  opacity: 0;
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+button.todo:disabled {
+  color: rgb(100, 100, 100);
+  background-color: rgb(255, 255, 255);
+  transition: all 0.25s ease;
+}
+
+.todoSticky {
+  position: sticky;
+  top: 0px;
+}
+
+.todoPadding {
+  min-height: 100%;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 10em;
+  }
+}
+
+.unstyled-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
