@@ -64,8 +64,8 @@ const QPA = new QuizItemWrapper({
     new BingoInput({
       varsAndAliases: [
         ["PA.Blackbridge Grotto", ["Grotto"]],
-        ["PA.Gem Cavern", []],
-        ["PA.West Path", []],
+        ["PA.Gem Cavern", ["Gemstone Cavern"]],
+        ["PA.West Path", ["West Gate Path"]],
         [
           "PA.Satellite Dish",
           ["Sattellite Dish", "Sattelite Dish", "Satelite Dish"],
