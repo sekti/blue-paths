@@ -16,6 +16,7 @@ import {
   type GlobalState,
   type PowerHammerLocation,
   type Realm,
+  type StateVar,
   type Tool,
 } from "./GlobalState";
 import {
@@ -4354,6 +4355,55 @@ export const Todos: Todo[] = [
         </div>
       );
       solved("Mark the Gallery puzzle as solved.", "roughDraftGallery");
+    },
+  }),
+  new Todo({
+    condition: "R46",
+    goal: (s) =>
+      !!s["trophies.Day One Trophy"] &&
+      !!s["trophies.Dare Bird Trophy"] &&
+      !!s["trophies.Trophy of Speed"] &&
+      (!!s["trophies.Cursed Trophy"] || !s["curseMode"]),
+    priority: LOW,
+    title: "🏆 “Those” Trophies",
+    sequence: (s) => {
+      say(
+        "If you love this game very much and would like to hate it instead, then there are some trophies you can pursue."
+      );
+      if (s["blackbridgeKey.Archive Access (LeeB)"]) {
+        say(
+          "Achieve them on a fresh save and then import them using the Blackbridge Grotto (LeeB)."
+        );
+      }
+      let list: StateVar[] = [
+        "trophies.Day One Trophy",
+        "trophies.Dare Bird Trophy",
+        "trophies.Trophy of Speed",
+      ];
+      if (s["curseMode"]) {
+        list.push("trophies.Cursed Trophy");
+      }
+      list
+        .filter((t) => !s[t])
+        .forEach((t) =>
+          solved(`Mark the ${ref(t).displayName} as achieved.`, t)
+        );
+    },
+  }),
+  new Todo({
+    condition: trophies.slice(0, -1),
+    goal: "trophies.Trophy of Trophies",
+    priority: VERYHIGH,
+    title: "🏆 Claim the Trophy of Trophies",
+    sequence: () => {
+      say(
+        "If you made it this far, you probably don't need this guide to tell you that your final trophy waits you in the Trophy Room. Claim it!"
+      );
+      solved(
+        "Mark the Trophy of Trophies as achieved.",
+        "trophies.Trophy of Trophies"
+      );
+      say("Congratulations!");
     },
   }),
 ];
