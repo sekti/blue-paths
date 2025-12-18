@@ -24,6 +24,7 @@ import qmark from "./assets/qmark.png";
 import share from "./assets/share.png";
 import reset from "./assets/trash.png";
 import logo from "./assets/blue-paths-logo.png";
+import github from "./assets/github-mark-white.png";
 import pointer from "./assets/pointing-finger.png";
 import clsx from "clsx";
 import {
@@ -598,6 +599,14 @@ function App() {
             >
               <img src={share} alt="share state" />
             </button>
+            <a
+              href="https://github.com/sekti/blue-paths"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-dark"
+            >
+              <img src={github} alt="github icon" />
+            </a>
           </span>
         </p>
 

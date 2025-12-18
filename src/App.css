@@ -246,6 +246,10 @@ span.chip.bingo.locked {
   filter: invert();
 }
 
+.headerButtons a img {
+  width: 1.5em; /* github logo need not be inverted */
+}
+
 .headerButtons button.logo img {
   width: 9em;
   filter: none;
