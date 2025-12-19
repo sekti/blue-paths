@@ -446,7 +446,11 @@ function restoreState(): GlobalState {
   const state = state_arr && stateFromString(state_arr);
   if (state) {
     console.log("Successfully loaded shared state.");
-    history.replaceState({ tab: "Quiz" }, "", `${location.origin}/#Quiz`);
+    history.replaceState(
+      { tab: "Quiz" },
+      "",
+      `${location.origin}${base}/#Quiz`
+    );
     return state;
   }
   // option 2: local storage
