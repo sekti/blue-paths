@@ -33,6 +33,7 @@ import {
 } from "lz-string";
 import QRCode from "react-qr-code";
 import { TritSetterView } from "./TritSetterView.tsx";
+const base = import.meta.env.BASE_URL; // "/blue-paths/"
 
 export function showAlert(message: string, timeout = 3000) {
   console.log(`Alert: ${message}`);
@@ -389,7 +390,7 @@ function ShareView() {
   const t: string[] = StateLogicHandler.instance.export();
   const t_str = JSON.stringify(t);
   const t_comp = compressToEncodedURIComponent(t_str);
-  const shareUrl = `${location.origin}/?state=${t_comp}`;
+  const shareUrl = `${location.origin}${base}/?state=${t_comp}`;
 
   const [copied, setCopied] = useState(false);
   async function copyToClipboard() {

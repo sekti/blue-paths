@@ -59,11 +59,11 @@ const Qtrophies = new QuizItemWrapper({
   ],
 });
 const QPA = new QuizItemWrapper({
-  title: "Which permanent additions have you unlooked?",
+  title: "Which permanent additions have you unlocked?",
   subitems: [
     new BingoInput({
       varsAndAliases: [
-        ["PA.Blackbridge Grotto", ["Grotto"]],
+        ["PA.Blackbridge Grotto", ["Grotto", "Blackbridge"]],
         ["PA.Gem Cavern", ["Gemstone Cavern", "Gem Cave", "Gemstone Cave"]],
         ["PA.West Path", ["West Gate Path", "Outer Room"]],
         [
