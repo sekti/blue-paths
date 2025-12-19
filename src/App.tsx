@@ -567,7 +567,7 @@ function App() {
   return (
     <div
       className="app-container d-flex flex-column"
-      style={{ height: "100%" }}
+      style={{ height: "100%", minHeight: "0pt" }}
     >
       <header className="bg-dark text-white text-center">
         <p>

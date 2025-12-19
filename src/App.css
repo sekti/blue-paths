@@ -8,6 +8,7 @@ html,
 body,
 #root {
   height: 100dvh;
+  min-height: 0pt;
   overflow: hidden; /* prevent outer scrolling */
 }
 
