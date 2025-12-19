@@ -5,11 +5,16 @@
 }
 
 html,
-body,
-#root {
+body {
   height: 100dvh;
   min-height: 0pt;
   overflow: hidden; /* prevent outer scrolling */
+}
+
+#root {
+  height: 100dvh;
+  min-height: 0pt;
+  overflow: auto; /* prevent outer scrolling */
 }
 
 .demo {
