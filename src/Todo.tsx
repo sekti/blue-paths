@@ -2890,7 +2890,7 @@ export const Todos: Todo[] = [
       );
       confirm();
       say(
-        "The checked corner case rooms are found on the previous page: Parlor, Patio, Nook, Office."
+        "The checked corner case rooms are found on the previous page: Patio, Nook, Office, Pantry."
       );
       confirm();
       say(
