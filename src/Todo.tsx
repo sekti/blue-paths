@@ -1615,7 +1615,13 @@ export const Todos: Todo[] = [
             // Observatory Blue Tents Note: THE LARGEST PLANET IN THE NIGHT SKY IS NAMED AFTER THE PARAGON OF ASH.
             return;
           case "Maid":
-            say("Check the Maid's chamber.");
+            if (s["rooms.Lost & Found"]) {
+              say(
+                "There is a clue in the Maid's chamber. Note that it may have been “lost”. In that case the clue is in the Lost & Found."
+              );
+            } else {
+              say("Check the Maid's Chamber.");
+            }
             confirm("Show answer.");
             say("Mila.");
             return;
