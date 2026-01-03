@@ -217,7 +217,7 @@ const QPHlocs = new QuizItemWrapper({
 const fireLocAliases: [FireLocation, string[]][] = [
   ["Tunnel (Torches)", ["Tunnel", "Grounds"]],
   ["Tunnel (Candles)", ["Tunnel", "Unknown"]],
-  ["Chapel 🐷", ["Chapel"]],
+  ["Chapel 🐷", ["Chapel", "Church"]],
   ["Tomb", []],
   ["Freezer", []],
   ["Trading Post (🧨)", ["Trading Post", "dynamite"]],
