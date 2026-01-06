@@ -3036,7 +3036,7 @@ export const Todos: Todo[] = [
         "The purpose of this puzzle is to determine the order in which the baron has visited the 8 realms."
       );
       confirm();
-      say("Do you need help the realms and their geographic locations?");
+      say("Do you need help with the realms and their geographic locations?");
       const locations: [Realm, string][] = [
         ["Orinda Aries", "east"],
         ["Fenn Aries", "east (same as Orinda Aries)"],
