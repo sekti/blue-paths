@@ -18,9 +18,15 @@ export function TritSetterView({ v, labelRight, labelLeft }: Props) {
       } else if (choice == v.get()) {
         v.set(choice);
       } else {
-        showAlert(
-          `This answer would contradict an answer given in ${v.getLockedReason()}`
-        );
+        if (choice == true) {
+          showAlert(
+            `You need to first mark something else as completed in ${v.getLockedReason()}`
+          );
+        } else {
+          showAlert(
+            `You need to first revoke a positive answer you gave in ${v.getLockedReason()}`
+          );
+        }
       }
       return;
     }

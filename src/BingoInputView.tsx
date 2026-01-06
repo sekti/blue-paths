@@ -47,7 +47,7 @@ export function BingoInputView({ varsAndAliases, prompt }: Props) {
             const remove = () => {
               if (v.isLocked()) {
                 showAlert(
-                  `Removing this answer would contradict an answer given in ${v.getLockedReason()}`
+                  `To remove this answer you need to first revoke a positive answer given in ${v.getLockedReason()}`
                 );
               } else {
                 v.set(missingIsNo ? false : undefined);
@@ -100,12 +100,12 @@ export function BingoInputView({ varsAndAliases, prompt }: Props) {
             if (matches.length == 0) {
               return;
             }
-            e.currentTarget.value = "";
             const goodMatches = matches.filter(
               (v) => !v.isLocked() && v.get() !== true
             );
             if (goodMatches.length) {
               // use first match
+              e.currentTarget.value = "";
               goodMatches[0].set(true);
             } else {
               // variables are locked or already true
@@ -114,7 +114,7 @@ export function BingoInputView({ varsAndAliases, prompt }: Props) {
                   ? `${v.displayName} already listed`
                   : `adding ${
                       v.displayName
-                    } would contradict an answer given in ${v.getLockedReason()}`
+                    } requires marking something else as completed in ${v.getLockedReason()}`
               );
               showAlert(reasons.join("; "));
             }
