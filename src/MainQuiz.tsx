@@ -175,6 +175,7 @@ const Qdocs = new QuizItemWrapper({
           v: `docs.${v}`,
           labelRight: ref(`docs.${v}`).displayName,
           condition: cond,
+          showDespiteDone: v === "Baron Bafflers", // otherwise removed if “solved” has been answered.
         })
     );
     items.push(

@@ -112,7 +112,7 @@ export function BingoInputView({ varsAndAliases, prompt }: Props) {
               const reasons = matches.map((v) =>
                 v.get() === true
                   ? `${v.displayName} already listed`
-                  : `adding ${
+                  : `Adding ${
                       v.displayName
                     } requires marking something else as completed in ${v.getLockedReason()}`
               );
