@@ -86,10 +86,10 @@ function LandingPage({ tabSetter }: LandingPageProps) {
         </h4>
         <p>
           <Emph>
-            This website is a spoiler free way to track your progress in Blue
-            Prince, helps you focus on promising clues and assists with
-            personalised hints. Use it to reinvigorate your Blue Prince runs if
-            you struggle.
+            This website offers is a spoiler-free hint system for Blue Prince.
+            It tracks your progress, helps you focus on promising clues and
+            assists with personalised hints. Use it to reinvigorate your Blue
+            Prince runs if you struggle.
           </Emph>
         </p>
       </div>
@@ -231,7 +231,7 @@ function HelpView() {
         this hint system you will eventually solve every puzzle that Blue Prince
         has to offer.*/}
       </p>
-      <h5>I'm unsure about an answer. How to proceed?</h5>
+      <h5>I'm unsure how to answer a quiz question. How to proceed?</h5>
       <p>
         This might happen if you have forgotten the name of a place or item. If
         in doubt, answer questions negatively. In that case you may be presented
@@ -249,7 +249,7 @@ function HelpView() {
         answers of earlier quiz questions determine which quiz questions are
         shown after. While basic automatic reasoning was instrumental for
         creating this hint system, most of the effort was spent in crafting{" "}
-        {Todos.length} interactive dialogs that provide personalised hints.
+        {Todos.length} interactive dialogues that provide personalised hints.
       </p>
       <h5>Where is my progress stored?</h5>
       <p>
@@ -257,6 +257,30 @@ function HelpView() {
         browser. Nothing is ever sent to the server. You can transfer your state
         to a different device or share it with friends via link sharing (see
         button in header). In that case your answers are stored in the link.
+      </p>
+      <h5>I have some feedback.</h5>
+      <p>
+        Great! Leave a comment on the{" "}
+        <a
+          href={
+            "https://www.reddit.com/r/BluePrince/comments/1pq2ndk/i_created_a_hint_system_for_blue_prince/"
+          }
+        >
+          reddit thread
+        </a>
+        , the{" "}
+        <a
+          href={
+            "https://steamcommunity.com/sharedfiles/filedetails/?id=3640894603"
+          }
+        >
+          Steam Community Guide
+        </a>{" "}
+        or open an{" "}
+        <a href={"https://github.com/sekti/blue-paths/issues/"}>
+          Issue on Github
+        </a>
+        .
       </p>
     </div>
   );
