@@ -1,6 +1,7 @@
 import { useState, type SetStateAction } from "react";
 import {
   ALIASES,
+  displayNameMap,
   freshGlobalState,
   REQUIREMENTS,
   stateFromString,
@@ -194,7 +195,7 @@ export function ref(v: StateVar): VarReference {
     isLocked: () => logic.isVarLocked(v),
     getUserChoice: () => logic.getUserChoice(v),
     isAlias: () => logic.isAlias(v),
-    displayName: v.replace(/.*\./g, ""), // remove prefix
+    displayName: displayNameMap.get(v) ?? v.replace(/.*\./g, ""), // remove prefix
   };
 }
 export function refs(vars: StateVar[]): VarReference[] {
