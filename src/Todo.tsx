@@ -2968,6 +2968,7 @@ export const Todos: Todo[] = [
       solved("Mark Curse Mode as unlocked.", "curseMode");
     },
   }),
+  /*
   new Todo({
     goal: "docs.Electronic Mail",
     title: "💻 Get Access to Electronic Mail",
@@ -2989,6 +2990,24 @@ export const Todos: Todo[] = [
       }
       say("Using it, you can access electronic mail in the Office.");
       solved("Mark electronic mail as read.", "docs.Electronic Mail");
+    },
+  }),*/
+  new Todo({
+    goal: "docs.Electronic Mail",
+    title: "💻 Gain Network Access",
+    sequence: () => {
+      say("It seems that a password is required.");
+      confirm();
+      say(
+        "There is a note in the Commissary as well as Security. Unfortunately the password is crossed out."
+      );
+      confirm();
+      say("Maybe you can get a closer look?");
+      confirm("Reveal what to do.");
+      say("Use a magnifying glass on one of the notes.");
+      confirmSol("Reveal password.");
+      say("The network password is “SWANSONG”.");
+      solved("Mark network access as attained.", "docs.Electronic Mail");
     },
   }),
   new Todo({

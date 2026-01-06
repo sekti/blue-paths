@@ -9,7 +9,6 @@ import {
   sanctumSigils,
   tools,
   trophies,
-  type BlackbridgeKey,
   type CombinationLock,
   type FireLocation,
   type FoundFloorplan,
@@ -149,15 +148,15 @@ const Qtools = new QuizItemWrapper({
 });
 
 const DocsWithConditions: [Document, Condition][] = [
-  ["Electronic Mail", []],
+  //["Electronic Mail", []],
   ["Will of Herbert S Sinclair", ["locR46"]],
   ["Birth Certificate of Mary Epsen", []],
   ["The Blue Prince Manuscript", []],
-  ["The Red Prince Manuscript", []],
+  ["The Red Prince Manuscript", ["locR46"]],
   //["A New Clue Manuscript", []], // not needed, is it?
   ["Her Ladyship's Diary", []],
   ["A note containing “steady, deadly, heavy, ready”", []],
-  ["Security Camera Footage", []],
+  //["Security Camera Footage", []],
   ["A note explaining how 86455 relates to 18", []],
   [
     "A note with a 5 × 5 grid of words",
@@ -188,6 +187,23 @@ const Qdocs = new QuizItemWrapper({
     );
     return items;
   })(),
+});
+
+const QPasswords = new QuizItemWrapper({
+  title: "Terminal Access",
+  subitems: [
+    new BingoInput({
+      varsAndAliases: [
+        ["docs.Electronic Mail", ["swansong"]],
+        ["docs.Security Camera Footage", ["swansonghss"]],
+        ["blackbridgeKey.Personnel Access (BabbA)", ["BabbA"]],
+        ["blackbridgeKey.Admin Access (MoorR, ThomK)", ["MoorR", "ThomK"]],
+        ["blackbridgeKey.Archive Access (LeeB)", ["LeeB", "ProvC", "HounU"]],
+        ["blackbridgeKey.Archive Access (RibbJ, WithP)", ["RibbJ", "WithP"]],
+      ],
+      prompt: "enter used passwords",
+    }),
+  ],
 });
 
 const PHlocAliases: [PowerHammerLocation, string[]][] = [
@@ -555,6 +571,7 @@ const QMicrochips = new QuizItemWrapper({
   ],
 });
 
+/*
 const blackbridgeKeysAliases: [BlackbridgeKey, string[]][] = [
   ["Personnel Access (BabbA)", ["BabbA"]],
   ["Admin Access (MoorR, ThomK)", ["MoorR", "ThomK"]],
@@ -574,7 +591,7 @@ const Qblackbridge = new QuizItemWrapper({
       prompt: "enter access key(s)",
     }),
   ],
-});
+}); */
 
 const Qmisc = new QuizItemWrapper({
   title: "Miscellaneous",
@@ -670,10 +687,10 @@ export const QuizItems: QuizItemWrapper[] = [
   Qmisc,
   Qaries,
   QKeys,
+  QPasswords,
   Qdocs,
   Qlocks,
   Qbooks,
-  Qblackbridge,
   Qdone,
 ];
 
