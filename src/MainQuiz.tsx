@@ -176,7 +176,7 @@ const Qdocs = new QuizItemWrapper({
           labelRight: ref(`docs.${v}`).displayName,
           condition: cond,
           showDespiteDone: v === "Baron Bafflers", // otherwise removed if “solved” has been answered.
-        })
+        }),
     );
     items.push(
       new TritSetter({
@@ -184,7 +184,7 @@ const Qdocs = new QuizItemWrapper({
         condition: "docs.Baron Bafflers",
         labelLeft: "✗",
         labelRight: "✓ solved",
-      })
+      }),
     );
     return items;
   })(),
@@ -300,7 +300,7 @@ const Qlocks = new QuizItemWrapper({
           labelRight: l,
           condition: `locksFound.${l}`,
           showDespiteDone: true,
-        })
+        }),
     ),
   ],
 });
@@ -624,11 +624,18 @@ const Qmisc = new QuizItemWrapper({
 });
 
 function ProgressGauge() {
+  // these vars should not count as not-achieved because doing them is uninteresting
+  const optionalVars: StateVar[] = [
+    "powerHammer.Freezer",
+    "blackbridgeKey.Personnel Access (BabbA)",
+  ];
   const gaugeEnabled = useState_LocalStorageTrit("progressGauge");
-  const done = Object.entries(StateLogicHandler.instance.overallState).filter(
-    ([_, val]) => val === true
-  ).length;
-  const perc = (done / numStateVars) * 100;
+  const s = StateLogicHandler.instance.overallState;
+  let done =
+    Object.entries(s).filter(([_, val]) => val === true).length -
+    optionalVars.filter((v) => s[v] === true).length;
+  const total = numStateVars - optionalVars.length;
+  const perc = (done / total) * 100;
   return (
     <>
       <TritSetterView v={gaugeEnabled} labelRight={"show progress meter"} />
@@ -641,11 +648,11 @@ function ProgressGauge() {
               role="progressbar"
               aria-valuenow={done}
               aria-valuemin={0}
-              aria-valuemax={numStateVars}
+              aria-valuemax={total}
             ></div>
           </div>
           <p className="mt-1" style={{ textAlign: "center" }}>
-            {done} out of {numStateVars} tracked events achieved
+            {done} out of {total} tracked events achieved
           </p>
         </div>
       )}
@@ -699,14 +706,14 @@ const SHOW_ALL_QUIZ_ITEMS = false;
 
 export function isQuizDone(): boolean {
   return !QuizItems.some(
-    (it) => (it.isReady() || it.isPinned()) && !it.isDone()
+    (it) => (it.isReady() || it.isPinned()) && !it.isDone(),
   );
 }
 
 export function getQuestionWith(v: StateVar): undefined | QuizItemWrapper {
   return QuizItems.find(
     (it) =>
-      (it.isReady() || it.isPinned()) && it.variables().some((w) => w.is(v))
+      (it.isReady() || it.isPinned()) && it.variables().some((w) => w.is(v)),
   );
 }
 
@@ -714,21 +721,21 @@ export function QuizView() {
   // this is where the logic for deciding which quiz items to show should exist
   let filtered = QuizItems.filter(
     (it) =>
-      (it.isReady() && !it.isDone()) || it.showDespiteDone || it.isPinned()
+      (it.isReady() && !it.isDone()) || it.showDespiteDone || it.isPinned(),
   );
   const first = filtered.findIndex((it) => !it.isDone());
   if (first >= 0) {
     filtered = filtered.filter((it, idx) => idx <= first || it.isPinned());
   }
   const items = (SHOW_ALL_QUIZ_ITEMS ? QuizItems : filtered).map((item) =>
-    renderQuizItem(item)
+    renderQuizItem(item),
   );
   if (first >= 0 && filtered.length - 1 > first) {
     items.push(
       <p key={"incompleteAnswerComplaint"} className="emph">
         To continue complete your answer to the question “
         {filtered[first].title}”.
-      </p>
+      </p>,
     );
   } else if (first >= 0) {
     // unanswered question is the current one
@@ -739,7 +746,7 @@ export function QuizView() {
         style={{ opacity: 0.5 }}
       >
         (There will be further questions after this one.)
-      </p>
+      </p>,
     );
   }
   return items;
