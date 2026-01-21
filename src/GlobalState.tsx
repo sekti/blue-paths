@@ -20,12 +20,12 @@ export type Antecedence = [StateVar, StateVar];
 export type Alias = [StateVar, StateVar];
 function REQs(befores: StateVar[], after: StateVar) {
   befores.forEach(
-    (before) => before != after && REQUIREMENTS.push([before, after])
+    (before) => before != after && REQUIREMENTS.push([before, after]),
   );
 }
 function requiredByAll(before: StateVar, afters: StateVar[]) {
   afters.forEach(
-    (after) => before != after && REQUIREMENTS.push([before, after])
+    (after) => before != after && REQUIREMENTS.push([before, after]),
   );
 }
 function REQ(requirement: StateVar, requiredFor: StateVar) {
@@ -47,7 +47,7 @@ const ToolList = [
 ] as const;
 export type Tool = (typeof ToolList)[number];
 export const tools: StateVar[] = ToolList.map(
-  (tool) => `tools.${tool}` as const
+  (tool) => `tools.${tool}` as const,
 );
 
 const PowerHammerLocationList = [
@@ -61,7 +61,7 @@ const PowerHammerLocationList = [
 ] as const;
 export type PowerHammerLocation = (typeof PowerHammerLocationList)[number];
 export const powerHammerLocations: StateVar[] = PowerHammerLocationList.map(
-  (loc) => `powerHammer.${loc}` as const
+  (loc) => `powerHammer.${loc}` as const,
 );
 
 const FireLocationList = [
@@ -76,7 +76,7 @@ const FireLocationList = [
 ] as const;
 export type FireLocation = (typeof FireLocationList)[number];
 export const fireLocations: StateVar[] = FireLocationList.map(
-  (loc) => `fire.${loc}` as const
+  (loc) => `fire.${loc}` as const,
 );
 
 const PermanentAdditionList = [
@@ -89,7 +89,7 @@ const PermanentAdditionList = [
 ] as const;
 export type PermanentAddition = (typeof PermanentAdditionList)[number];
 export const permanentAdditions: StateVar[] = PermanentAdditionList.map(
-  (PA) => `PA.${PA}` as const
+  (PA) => `PA.${PA}` as const,
 );
 
 export const CombinationLockList = [
@@ -104,10 +104,10 @@ export const CombinationLockList = [
 ] as const;
 export type CombinationLock = (typeof CombinationLockList)[number];
 export const locksFound: StateVar[] = CombinationLockList.map(
-  (lock) => `locksFound.${lock}` as const
+  (lock) => `locksFound.${lock}` as const,
 );
 export const locksOpened: StateVar[] = CombinationLockList.map(
-  (lock) => `locksOpened.${lock}` as const
+  (lock) => `locksOpened.${lock}` as const,
 );
 
 const StudioAdditionList = [
@@ -123,7 +123,7 @@ const StudioAdditionList = [
 
 export type StudioAddition = (typeof StudioAdditionList)[number];
 export const studioAdditions: StateVar[] = StudioAdditionList.map(
-  (SA) => `rooms.${SA}` as const
+  (SA) => `rooms.${SA}` as const,
 );
 
 const FoundFloorplanList = [
@@ -139,7 +139,7 @@ const FoundFloorplanList = [
 ] as const;
 export type FoundFloorplan = (typeof FoundFloorplanList)[number];
 export const foundFloorplans: StateVar[] = FoundFloorplanList.map(
-  (FF) => `rooms.${FF}` as const
+  (FF) => `rooms.${FF}` as const,
 );
 export type Room = StudioAddition | FoundFloorplan;
 
@@ -153,7 +153,7 @@ const BookFromStockList = [
 ] as const;
 export type BookFromStock = (typeof BookFromStockList)[number];
 export const booksFromStock: StateVar[] = BookFromStockList.map(
-  (book) => `books.${book}` as const
+  (book) => `books.${book}` as const,
 );
 const BookFromShopList = [
   "The History of Orindia (1st ed)",
@@ -165,7 +165,7 @@ const BookFromShopList = [
 ] as const;
 export type BookFromShop = (typeof BookFromShopList)[number];
 export const booksFromShop: StateVar[] = BookFromShopList.map(
-  (book) => `books.${book}` as const
+  (book) => `books.${book}` as const,
 );
 
 const Documents = [
@@ -185,7 +185,7 @@ const Documents = [
 ] as const;
 export type Document = (typeof Documents)[number];
 export const documents: StateVar[] = Documents.map(
-  (doc) => `docs.${doc}` as const
+  (doc) => `docs.${doc}` as const,
 );
 
 const BlackbridgeKeys = [
@@ -196,7 +196,7 @@ const BlackbridgeKeys = [
 ] as const;
 export type BlackbridgeKey = (typeof BlackbridgeKeys)[number];
 export const blackbridgeKeys: StateVar[] = BlackbridgeKeys.map(
-  (k) => `blackbridgeKey.${k}` as const
+  (k) => `blackbridgeKey.${k}` as const,
 );
 
 const MicrochipLocations = [
@@ -206,7 +206,7 @@ const MicrochipLocations = [
 ] as const;
 export type MicrochipLocation = (typeof MicrochipLocations)[number];
 export const microchipLocations: StateVar[] = MicrochipLocations.map(
-  (k) => `microchip.${k}` as const
+  (k) => `microchip.${k}` as const,
 );
 
 export type Book = BookFromShop | BookFromStock;
@@ -241,15 +241,15 @@ export function RealmIcon(R: Realm) {
 }
 
 export const sanctumKeys: StateVar[] = EightList.map(
-  (num) => `sanctumKeys.${num}` as const
+  (num) => `sanctumKeys.${num}` as const,
 );
 
 export const sanctumDoors: StateVar[] = Realms.map(
-  (realm) => `sanctumDoors.${realm}` as const
+  (realm) => `sanctumDoors.${realm}` as const,
 );
 
 export const sanctumSigils: StateVar[] = Realms.map(
-  (realm) => `sanctumSigils.${realm}` as const
+  (realm) => `sanctumSigils.${realm}` as const,
 );
 
 export const TrophyList = [
@@ -272,7 +272,7 @@ export const TrophyList = [
 ] as const;
 export type Trophy = (typeof TrophyList)[number];
 export const trophies: StateVar[] = TrophyList.map(
-  (trophy) => `trophies.${trophy}` as const
+  (trophy) => `trophies.${trophy}` as const,
 );
 
 export type BlueDoor = "Secret Passage" | "Tunnel";
@@ -363,11 +363,11 @@ export const ALIASES: Alias[] = [];
   // "Treasure Trove",
   ALIAS("locksOpened.Rotating Gear", "rooms.Treasure Trove");
   // "Throne Room",
-  ALIAS("allMicrochips", "rooms.Throne Room");
+  REQ("allMicrochips", "rooms.Throne Room");
   // "Throne of the Blue Prince",
   REQs(
     ["itScepter", "curseMode", "itCrown", "rooms.Throne Room"],
-    "rooms.Throne of the Blue Prince"
+    "rooms.Throne of the Blue Prince",
   );
   // "Tunnel",
   ALIAS("fire.Tunnel (Torches)", "rooms.Tunnel"); // must be this way so saying no to tunnel does not pin the Fire Location Question
@@ -381,7 +381,7 @@ export const ALIASES: Alias[] = [];
   // just the ordinary throne room is required for the throphy!
   REQs(
     foundFloorplans.filter((r) => r != "rooms.Throne of the Blue Prince"),
-    "trophies.Explorer's Trophy"
+    "trophies.Explorer's Trophy",
   );
   REQs(studioAdditions, "trophies.Explorer's Trophy");
 }
@@ -401,7 +401,7 @@ export const ALIASES: Alias[] = [];
   // "The Blue Prince Manuscript",
   REQs(
     ["blueDoors.Tunnel", "rooms.Throne of the Blue Prince"],
-    "docs.The Blue Prince Manuscript"
+    "docs.The Blue Prince Manuscript",
   );
   // "The Red Prince Manuscript",
   REQ("locCatacombs", "docs.The Red Prince Manuscript");
@@ -412,7 +412,7 @@ export const ALIASES: Alias[] = [];
   // "A note containing “steady, deadly, heavy, ready”",
   REQs(
     ["locAntechamber", "PA.West Path"],
-    "docs.A note containing “steady, deadly, heavy, ready”"
+    "docs.A note containing “steady, deadly, heavy, ready”",
   );
   REQ("PA.Satellite Dish", "docs.A note explaining how 86455 relates to 18");
   REQ("docs.Baron Bafflers", "bafflersPuzzle");
@@ -562,9 +562,10 @@ REQ("PA.West Path", "microchip.West Path");
 // # logic for microchipB:
 null;
 // # logic for microchipC:
-ALIAS("microchip.Blackbridge Grotto", "PA.Blackbridge Grotto"); // could also be alias, but user should never interact with itMicrochipC directly.
+ALIAS("microchip.Blackbridge Grotto", "PA.Blackbridge Grotto");
 // # logic for allMicrochips:
-REQs(microchipLocations, "rooms.Throne Room");
+REQs(microchipLocations, "allMicrochips");
+REQ("allMicrochips", "rooms.Throne Room");
 // # logic for foundUnderpass:
 REQ("locGearAndCartSide", "locUnderpass");
 // # logic for foundScepter:
@@ -583,7 +584,7 @@ REQ("locR46", "docs.Will of Herbert S Sinclair");
 // # logic for locRoughDraft:
 REQs(
   ["blueDoors.Secret Passage", "rooms.Throne of the Blue Prince"],
-  "locRoughDraft"
+  "locRoughDraft",
 );
 // # logic for roughDraft46:
 requiredByAll("locRoughDraft", [
