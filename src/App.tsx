@@ -382,7 +382,7 @@ function TodosView({ classes }: TodosViewProps) {
               className={clsx(
                 "btn",
                 "todo",
-                todo === t ? "btn-primary" : "btn-light"
+                todo === t ? "btn-primary" : "btn-light",
               )}
               data-bs-toggle="button"
               onClick={() => {
@@ -459,7 +459,7 @@ function ShareView() {
   );
 }
 
-function restoreState(): GlobalState {
+function restoreStateUnfixed(): GlobalState {
   // option 1: shared state via url
   const state_enc_comp = new URLSearchParams(location.search).get("state");
   const state_enc =
@@ -473,7 +473,7 @@ function restoreState(): GlobalState {
     history.replaceState(
       { tab: "Quiz" },
       "",
-      `${location.origin}${base}/#Quiz`
+      `${location.origin}${base}/#Quiz`,
     );
     return state;
   }
@@ -493,6 +493,14 @@ function restoreState(): GlobalState {
   return freshGlobalState();
 }
 
+function restoreState(): GlobalState {
+  const s = restoreStateUnfixed();
+  // allMicrochips can no longer be set by user, must be undefined
+  // this should be a one-time fix, i.e. when an old saved state is loaded it will be fixed here
+  s.allMicrochips = undefined;
+  return s;
+}
+
 type TodoStatePair = [Todo | undefined, (t: Todo | undefined) => void];
 const TodoContext = createContext<TodoStatePair | undefined>(undefined);
 
@@ -500,7 +508,7 @@ type Tab = "Start" | "Hints" | "Todos" | "Quiz" | "Help" | "Share" | "Reset";
 function tabFromUrl(): Tab {
   return (
     (["Quiz", "Todos", "Hints", "Help", "Share", "Start"] as const).find((t) =>
-      window.location.hash.includes(t)
+      window.location.hash.includes(t),
     ) ?? "Start"
   );
 }
