@@ -8,7 +8,7 @@ html,
 body {
   height: 100dvh;
   min-height: 0pt;
-  overflow: hidden; /* prevent outer scrolling */
+  overflow: auto; /* prevent outer scrolling */
 }
 
 #root {
@@ -32,7 +32,9 @@ body {
 
   /* paper feel */
   border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.05);
 
   /* font-family: "Patrick Hand", cursive;*/
   font-family: "Special Elite", system-ui;
@@ -265,6 +267,10 @@ span.chip.bingo.locked {
 .contentTab {
   max-width: 600px;
   min-height: 0;
+}
+
+.noHeight {
+  height: 0px;
 }
 
 .hintdialog p {

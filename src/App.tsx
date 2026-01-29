@@ -573,14 +573,12 @@ function App() {
 
   function tabClasses(t: Tab, extraClass?: string) {
     return clsx([
-      shown.includes(t) ? "d-flex" : ["position-absolute", "invisible"],
-
-      "h-100",
+      shown.includes(t)
+        ? ["d-flex", "h-100", "p-4"]
+        : ["position-absolute", "invisible", "noHeight"],
       "contentTab",
-      "overflow-auto",
       "flex-grow-1",
       "flex-basis-0",
-      "p-4",
       "overflow-auto",
       "flex-column",
       extraClass,
