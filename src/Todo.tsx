@@ -2380,7 +2380,7 @@ export const Todos: Todo[] = [
     sequence: () => {
       say("This requires solving 40 dartboard puzzles. You can do it!");
       solved(
-        "Mark the Bullseye Trophy as achieve.",
+        "Mark the Bullseye Trophy as achieved.",
         "trophies.Bullseye Trophy",
       );
     },
@@ -2393,7 +2393,7 @@ export const Todos: Todo[] = [
     sequence: () => {
       say("This requires winning 40 Parlor games. You can do it!");
       solved(
-        "Mark the Logical Trophy as achieve.",
+        "Mark the Logical Trophy as achieved.",
         "trophies.A Logical Trophy",
       );
     },
