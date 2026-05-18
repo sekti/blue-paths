@@ -182,8 +182,8 @@ const Qdocs = new QuizItemWrapper({
       new TritSetter({
         v: "bafflersPuzzle",
         condition: "docs.Baron Bafflers",
-        labelLeft: "✗",
-        labelRight: "✓ solved",
+        labelLeft: "          ",
+        labelRight: "solved Baron Bafflers",
       }),
     );
     return items;
