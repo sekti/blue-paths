@@ -1381,6 +1381,7 @@ export const Todos: Todo[] = [
       "curseMode",
       "itScepter",
       "docs.A note containing “steady, deadly, heavy, ready”",
+      "rooms.Throne Room",
     ],
     priority: VERYHIGH,
     title: "👑 Get Crowned",
