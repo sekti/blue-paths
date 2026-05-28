@@ -831,12 +831,48 @@ export const Todos: Todo[] = [
     condition: "R46", // not in the beginning of the game
     priority: LOW,
     title: "🔎 The Treasure Map",
-    sequence: () => {
+    sequence: (s) => {
+      say("Did you encounter the treasure map?");
+      if (!askYesNo()) {
+        say("Nevermind.");
+        return;
+      }
+      say("Did you find treasure?");
+      if (!askYesNo()) {
+        say("Keep looking!");
+        return;
+      }
+      say("Good. Keep at it.");
+      confirm();
       say(
-        "The treasure map can lead you to something more interesting than gold or gems.",
+        "Rumour has it that some players have dug up something more interesting than gold or gems. Most of them were just lucky.",
       );
       confirm();
-      say("👇 (← hint)");
+      say(
+        "Think of the treasure map as a tool that allows you to dig in places where you normally cannot dig.",
+      );
+      if (s["docs.A New Clue Manuscript"]) {
+        confirm();
+        say("There is a clue in the New Clue Manuscript.");
+        confirm();
+        say("In that case, an ✗ marks the spot.");
+      } else {
+        say(
+          "You will encounter more clues later in the playthrough. Consider coming back then.",
+        );
+      }
+      if (s["docs.Birth Certificate of Mary Epsen"]) {
+        confirm();
+        say(
+          "There is a room where you encountered digging related clues before.",
+        );
+        confirm();
+        say("Check the Aquarium. There is no ✗ to mark the spot though.");
+      }
+      confirm();
+      say("Most players encounter a large pointer on Day 1.");
+      confirm();
+      say("“👇”");
       confirm();
       say("There is a “👇” in the Bedroom.");
       confirmSol();
