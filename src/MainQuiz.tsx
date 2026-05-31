@@ -527,7 +527,7 @@ const Qaries = new QuizItemWrapper({
     new TritSetter({
       v: "itScepter",
       condition: "itAriesKey",
-      labelRight: "I used Key of Aries",
+      labelRight: "I used the Key of Aries",
     }),
   ],
 });

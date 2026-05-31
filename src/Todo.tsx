@@ -1435,25 +1435,68 @@ export const Todos: Todo[] = [
           </ul>
         </div>,
       );
-      confirmSol();
-      show(
-        <div>
-          <p>Enter the throne room with the following three items:</p>
-          <ul>
-            <li>the Royal Scepter, set to blue</li>
-            <li>the Cursed Effigy</li>
-            <li>the Crown of the Blueprints</li>
-          </ul>
-        </div>,
-      );
-      confirm("Show effect.");
-      say(
-        "You will see a cutscene and the Throne Room floor plan will “ascend”.",
-      );
-      solved(
-        "Mark the Throne of the Blue Prince floor plan as found.",
-        "rooms.Throne of the Blue Prince",
-      );
+      confirm();
+      say("What do you need help with?");
+      switch (
+        askOption([
+          "The Scepter",
+          "The Stone",
+          "The Crown",
+          "The Throne",
+          "show full solution",
+        ])
+      ) {
+        case "The Scepter":
+          say(
+            "This refers to the Royal Scepter. It needs to be set to a specific colour.",
+          );
+          confirm();
+          say("It should reflect the colour of prince you wish to become.");
+          confirmReveal("Reveal colour.");
+          say("Blue.");
+          return;
+        case "The Stone":
+          say(
+            "The Stone is seen in a crowning ceremony depicted in the history classroom.",
+          );
+          confirm();
+          say(
+            "The note above featured a drawing of an ornate chest, hinting at a legendary stone said to be deadly to its bearer.",
+          );
+          confirmReveal("Reveal item.");
+          say(
+            "The Stone is the Cursed Effigy found in the Cursed Coffers in the Shrine.",
+          );
+          return;
+        case "The Crown":
+          say("This refers to the Crown of the Blueprints.");
+          return;
+        case "The Throne":
+          say(
+            "The “Scepter”, “Stone” and “Crown” need to be brought to the Throne Room.",
+          );
+          return;
+        case "show full solution":
+          show(
+            <div>
+              <p>Enter the Throne Room with the following three items:</p>
+              <ul>
+                <li>the Royal Scepter, set to blue</li>
+                <li>the Cursed Effigy</li>
+                <li>the Crown of the Blueprints</li>
+              </ul>
+            </div>,
+          );
+          confirm("Show effect.");
+          say(
+            "You will see a cutscene and the Throne Room floor plan will “ascend”.",
+          );
+          solved(
+            "Mark the Throne of the Blue Prince floor plan as found.",
+            "rooms.Throne of the Blue Prince",
+          );
+          return;
+      }
     },
   }),
   new Todo({
