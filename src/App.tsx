@@ -439,7 +439,7 @@ function ShareView() {
         style={{ padding: "1rem", border: "1px solid #ccc", borderRadius: 8 }}
       >
         <div>
-          <QRCode value="hey" />
+          <QRCode value={shareUrl} />
         </div>
         <div
           style={{
