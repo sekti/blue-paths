@@ -384,7 +384,7 @@ const studioAliasList: [StudioAddition, string[]][] = [
   ["Classroom", []],
   ["Solarium", []],
   ["Dormitory", []],
-  ["Vestibule", []],
+  ["Antechamber", []],
   ["Casino", []],
 ];
 
@@ -448,7 +448,7 @@ const QroughDraft = new QuizItemWrapper({
     new TritSetter({
       v: "roughDraftMoonDoor",
       condition: "locRoughDraft",
-      labelRight: "opened the moon door in the Vestibule",
+      labelRight: "opened the moon door in the Antechamber",
     }),
     new TritSetter({
       v: "roughDraft46",

@@ -4134,16 +4134,16 @@ export const Todos: Todo[] = [
       confirm();
       say("The “prism” refers to the lanterns on rank 1 (see Atelier poster).");
       confirm();
-      say("The paths convene at the Vestibule.");
+      say("The paths convene at the Antechamber.");
       confirm();
       say("There is a red path, an orange path and a purple path.");
       confirmSol();
       say(
-        "Starting at the red, orange or purple lantern on rank one, reach the Vestibule without ever passing a lantern of a different color.",
+        "Starting at the red, orange or purple lantern on rank one, reach the Antechamber without ever passing a lantern of a different color.",
       );
       confirmReveal("Reveal what happens.");
       say(
-        "The moon door in the Vestibule can be opened. But a note will clarify that each was “not the true path”.",
+        "The moon door in the Antechamber can be opened. But a note will clarify that each was “not the true path”.",
       );
       solved("Mark the moon door as opened.", "roughDraftMoonDoor");
     },

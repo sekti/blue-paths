@@ -117,7 +117,7 @@ const StudioAdditionList = [
   "Classroom",
   "Solarium",
   "Dormitory",
-  "Vestibule",
+  "Antechamber",
   "Casino",
 ] as const;
 
@@ -683,7 +683,7 @@ const allUndefinedState: GlobalState = {
   "rooms.Classroom": undefined,
   "rooms.Solarium": undefined,
   "rooms.Dormitory": undefined,
-  "rooms.Vestibule": undefined,
+  "rooms.Antechamber": undefined,
   "rooms.Casino": undefined,
   "rooms.Planetarium": undefined,
   "rooms.Mechanarium": undefined,
