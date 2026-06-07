@@ -4134,7 +4134,9 @@ export const Todos: Todo[] = [
       confirm();
       say("The “prism” refers to the lanterns on rank 1 (see Atelier poster).");
       confirm();
-      say("The paths convene at the Vestibule.");
+      say(
+        "The paths convene in the Vestibule (which serves as an antechamber on rank 9, column 3).",
+      );
       confirm();
       say("There is a red path, an orange path and a purple path.");
       confirmSol();
