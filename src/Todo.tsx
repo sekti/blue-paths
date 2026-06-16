@@ -441,7 +441,7 @@ export const Todos: Todo[] = [
   new Todo({
     condition: ["hasFire", "books.Drafting Strategy Vol 4"],
     goal: "litCandles",
-    title: "👁 tool tips",
+    title: "👁 Tool tips",
     sequence: (s) => {
       say("Didn't “Drafting Strategy Vol 4” mention something about candles?");
       confirm("Remind me.");
@@ -500,7 +500,7 @@ export const Todos: Todo[] = [
       say(
         "The cooler labeled “Master Sinclair's personal freezer” sounds relevant.",
       );
-      confirm("How hint.");
+      confirm("Show hint.");
       say("A tool related to fire might help.");
       confirmSol();
       say(`Use a source of fire (${getFireSource(s)}) to melt the ice.`);
@@ -1162,7 +1162,7 @@ export const Todos: Todo[] = [
   new Todo({
     goal: "locksOpened.Office",
     condition: ["locksFound.Office", "artPuzzle"],
-    title: "🧩 open the safe in the office",
+    title: "🧩 Open the safe in the office",
     sequence: () => {
       say(
         "Have you seen the bust above the safe somewhere else in the estate?",
@@ -1185,7 +1185,7 @@ export const Todos: Todo[] = [
   new Todo({
     goal: "locksOpened.Shelter",
     condition: "locksFound.Shelter",
-    title: "🧩 open the safe in the shelter",
+    title: "🧩 Open the safe in the shelter",
     sequence: () => {
       say(
         "The terminal literally tells you how that safe can be opened. There is just one minor complication...",
@@ -1208,7 +1208,7 @@ export const Todos: Todo[] = [
   new Todo({
     goal: "locksOpened.Drawing Room",
     condition: ["locksFound.Drawing Room", "artPuzzle"],
-    title: "🧩 open the safe in the drawing room",
+    title: "🧩 Open the safe in the drawing room",
     sequence: (s) => {
       say("Look around the room.");
       confirm();
@@ -1242,7 +1242,7 @@ export const Todos: Todo[] = [
   new Todo({
     goal: "locksOpened.Drafting Studio",
     condition: "locksFound.Drafting Studio",
-    title: "🧩 open the safe in the drafting studio",
+    title: "🧩 Open the safe in the drafting studio",
     sequence: () => {
       say("That safe sure is really tiny.");
       confirm();
@@ -1252,7 +1252,7 @@ export const Todos: Todo[] = [
         "Recall the message you deciphered in the art puzzle. Everything else you need is in the room.",
       );
       confirm();
-      say("You need a date in format MM-DD. Oh, look: A calender!");
+      say("You need a date in format MM-DD. Oh, look: A calendar!");
       confirm();
       say("Count small gates to get a day.");
       confirmSol();
@@ -1268,7 +1268,7 @@ export const Todos: Todo[] = [
   new Todo({
     goal: "locksOpened.Boudoir",
     condition: ["locksFound.Boudoir", "artPuzzle"],
-    title: "🧩 open the safe in the boudoir",
+    title: "🧩 Open the safe in the boudoir",
     sequence: () => {
       say("Look around the room.");
       confirm();
@@ -1284,7 +1284,7 @@ export const Todos: Todo[] = [
   new Todo({
     goal: "locksOpened.Study",
     condition: ["locksFound.Study", "artPuzzle"],
-    title: "🧩 open the safe in the Study",
+    title: "🧩 Open the safe in the Study",
     sequence: () => {
       say("Don't overthink it.");
       confirm();
@@ -1303,7 +1303,7 @@ export const Todos: Todo[] = [
   new Todo({
     goal: "locksOpened.Rotating Gear",
     condition: ["locksFound.Rotating Gear", "artPuzzle"],
-    title: "🧩 open the gate above the rotating gear",
+    title: "🧩 Open the gate above the rotating gear",
     sequence: () => {
       say("Take another look at the available symbols.");
       confirm();
