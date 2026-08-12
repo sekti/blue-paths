@@ -1170,7 +1170,9 @@ export const Todos: Todo[] = [
       confirm();
       say("The bust can be found in the Foyer. It depicts Count Isaac Gates.");
       confirm();
-      say("Recall the message you deciphered in the art puzzle.");
+      say(
+        "Recall the 44 letter message regarding safe-cracking that you have obtained.",
+      );
       confirm("Explicit hint.");
       say(
         "You need a date in format MM.DD. Get the day by “counting small Gates”.",
@@ -1212,7 +1214,9 @@ export const Todos: Todo[] = [
     sequence: (s) => {
       say("Look around the room.");
       confirm();
-      say("Reflect carefully on the message you deciphered in the art puzzle.");
+      say(
+        "Reflect carefully on the 44 letter message regarding safe-cracking.",
+      );
       confirm();
       say(
         "A particular homophone in the message is easy to miss (especially if you're not a native speaker).",
@@ -1249,7 +1253,7 @@ export const Todos: Todo[] = [
       say("You need a magnifying glass to interact with it.");
       confirm();
       say(
-        "Recall the message you deciphered in the art puzzle. Everything else you need is in the room.",
+        "Recall the 44 letter message regarding safe-cracking. Everything else you need is in the room.",
       );
       confirm();
       say("You need a date in format MM-DD. Oh, look: A calendar!");
@@ -1272,7 +1276,9 @@ export const Todos: Todo[] = [
     sequence: () => {
       say("Look around the room.");
       confirm();
-      say("As per the solution of the art puzzle, safes are cracked by dates.");
+      say(
+        "As per the 44 letter message you obtained, safes are cracked by dates.",
+      );
       confirmSol();
       say(
         "The picture hints at December 25th (Christmas Day). Both 2512 and 1225 work to open the safe.",
