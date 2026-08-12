@@ -468,7 +468,7 @@ export const ALIASES: Alias[] = [];
   //"Trophy of Speed",
   REQ("R46", "trophies.Trophy of Speed");
   //"Diploma Trophy",
-  REQs(["PA.West Path", "rooms.Classroom"], "trophies.Diploma Trophy");
+  REQ("PA.West Path", "trophies.Diploma Trophy"); // note: "rooms.Classroom" is not required!
   //"Trophy of Trophies",
   REQs(trophies, "trophies.Trophy of Trophies");
 }
@@ -566,8 +566,6 @@ ALIAS("microchip.Blackbridge Grotto", "PA.Blackbridge Grotto");
 // # logic for allMicrochips:
 REQs(microchipLocations, "allMicrochips");
 REQ("allMicrochips", "rooms.Throne Room");
-// # logic for foundUnderpass:
-REQ("locGearAndCartSide", "locUnderpass");
 // # logic for foundScepter:
 REQs(["PA.West Path", "rooms.Treasure Trove", "itAriesKey"], "itScepter");
 // # logic for ariesKey:
