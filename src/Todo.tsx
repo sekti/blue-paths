@@ -1245,7 +1245,7 @@ export const Todos: Todo[] = [
   }),
   new Todo({
     goal: "locksOpened.Drafting Studio",
-    condition: "locksFound.Drafting Studio",
+    condition: ["locksFound.Drafting Studio", "artPuzzle"],
     title: "🧩 Open the safe in the drafting studio",
     sequence: () => {
       say("That safe sure is really tiny.");
