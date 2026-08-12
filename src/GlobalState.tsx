@@ -383,7 +383,10 @@ export const ALIASES: Alias[] = [];
     foundFloorplans.filter((r) => r != "rooms.Throne of the Blue Prince"),
     "trophies.Explorer's Trophy",
   );
-  REQs(studioAdditions, "trophies.Explorer's Trophy");
+  REQs(
+    studioAdditions.filter((r) => r != "rooms.Classroom"), // classroom can be discovered without having the extra classroom
+    "trophies.Explorer's Trophy",
+  );
 }
 // # logic for books:
 // # logic for allStockBooks:
