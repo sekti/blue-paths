@@ -576,7 +576,7 @@ REQ("locAriesCourt", "itAriesKey");
 // # logic for paperCrown:
 REQ("rooms.Closed Exhibit", "itPaperCrown");
 // # logic for curseMode:
-REQs(["PA.West Path", "books.The Curse of Black Bridge", "R46"], "curseMode");
+REQs(["PA.West Path", "R46"], "curseMode");
 // # logic for artPuzzle:
 // # logic for chessPuzzle:
 REQ("locPrecipice", "chessPuzzle");

@@ -3031,6 +3031,7 @@ export const Todos: Todo[] = [
       say("Did you buy the Cursed Coffers in the Gift Shop?");
       if (!askYesNo()) {
         say("Chicken!");
+        // This guide points you at ways to read the books outside the game. So better point out that an INGAME read is required.
         say(
           "⚠ Note: For the Coffers to appear you need to have read “The Curse of Black Bridge” in the Library.",
         );
@@ -3041,7 +3042,7 @@ export const Todos: Todo[] = [
         say("The coffers appear in the shrine. None would dare to open it.");
         confirm();
         say(
-          "I someone were to dare to open it, they'd likely do it the same way it was done in the book.",
+          "If someone were to dare to open it, they'd likely do it the same way it was done in the book.",
         );
         confirm("Reveal how.");
         say(

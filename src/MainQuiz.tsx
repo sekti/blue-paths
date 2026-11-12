@@ -612,7 +612,7 @@ const Qmisc = new QuizItemWrapper({
     }),
     new TritSetter({
       v: "curseMode",
-      condition: ["books.The Curse of Black Bridge", "R46"],
+      condition: "R46",
       labelRight: "unlocked curse mode",
     }),
     new TritSetter({
